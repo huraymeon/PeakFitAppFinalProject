@@ -1,0 +1,21 @@
+package com.yourteam.app.userregistrationtestfinalproject.model;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class UserRegistrationTest {
+
+    @Test
+    void validEmailPasses() {
+        User u = new User("harry@example.com");
+        Assertions.assertEquals("harry@example.com", u.getEmail());
+    }
+
+    @Test
+    void invalidEmailThrows() {
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> new User("bad-email")
+        );
+    }
+}
