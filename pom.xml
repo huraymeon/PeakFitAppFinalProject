@@ -60,7 +60,7 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.8</version>
         <configuration>
-          <mainClass>com.yourteam.app.userregistrationtestFINALPROJECT.HelloApplication</mainClass>
+          <mainClass>com.yourteam.app.peakfitappfinalproject.model</mainClass>
         </configuration>
       </plugin>
 

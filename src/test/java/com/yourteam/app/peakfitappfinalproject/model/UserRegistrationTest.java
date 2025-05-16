@@ -1,4 +1,4 @@
-package com.yourteam.app.userregistrationtestfinalproject.model;
+package com.yourteam.app.peakfitappfinalproject.model;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

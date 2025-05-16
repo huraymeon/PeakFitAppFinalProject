@@ -1,4 +1,4 @@
-package com.yourteam.app.userregistrationtestfinalproject.model;
+package com.yourteam.app.peakfitappfinalproject.model;
 
 public class User {
     private final String email;
