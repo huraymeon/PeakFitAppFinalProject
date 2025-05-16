@@ -3,6 +3,11 @@ package com.yourteam.app.userregistrationtestfinalproject.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * JUnit tests for User registration.
+ * Each test validates part of the registration functionality.
+ * Author: Harry Moon
+ */
 public class UserRegistrationTest {
 
     @Test
