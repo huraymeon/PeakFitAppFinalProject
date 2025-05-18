@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class WorkoutGenerator {
+
+    private static final List<Exercise> legExercises = new ArrayList<>();
+    private static final List<Exercise> armExercises = new ArrayList<>();
+    private static final List<Exercise> chestExercises = new ArrayList<>();
+    private static final List<Exercise> backExercises = new ArrayList<>();
+
+    static {
+        // Adding exercises for legs
+        legExercises.add(new Exercise("Squat", "Legs", 3, 12));
+        legExercises.add(new Exercise("Lunges", "Legs", 3, 12));
+        legExercises.add(new Exercise("Leg Press", "Legs", 3, 10));
+
+        // Adding exercises for arms
+        armExercises.add(new Exercise("Bicep Curls", "Arms", 3, 12));
+        armExercises.add(new Exercise("Tricep Dips", "Arms", 3, 12));
+        armExercises.add(new Exercise("Hammer Curls", "Arms", 3, 12));
+
+        // Adding exercises for chest
+        chestExercises.add(new Exercise("Push-ups", "Chest", 3, 15));
+        chestExercises.add(new Exercise("Bench Press", "Chest", 3, 10));
+        chestExercises.add(new Exercise("Chest Fly", "Chest", 3, 12));
+
+        // Adding exercises for back
+        backExercises.add(new Exercise("Pull-ups", "Back", 3, 10));
+        backExercises.add(new Exercise("Lat Pulldown", "Back", 3, 10));
+        backExercises.add(new Exercise("Deadlift", "Back", 3, 8));
+    }
+
+    public static List<Exercise> getExercisesByMuscleGroup(String muscleGroup) {
+        switch (muscleGroup.toLowerCase()) {
+            case "legs":
+                return new ArrayList<>(legExercises);
+            case "arms":
+                return new ArrayList<>(armExercises);
+            case "chest":
+                return new ArrayList<>(chestExercises);
+            case "back":
+                return new ArrayList<>(backExercises);
+            default:
+                return new ArrayList<>();
+        }
+    }
+}
