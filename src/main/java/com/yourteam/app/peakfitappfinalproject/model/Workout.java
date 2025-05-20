@@ -36,6 +36,10 @@ public class Workout {
         return hoursWorked;
     }
 
+    public int getTotal(){
+        return exercises.size();
+    }
+
     @Override
     public String toString() {
         String returnString = "Workout on " + date + ", duration " + hoursWorked + " hours.\n" + exercises.size() + " excercises were completed:\n";
