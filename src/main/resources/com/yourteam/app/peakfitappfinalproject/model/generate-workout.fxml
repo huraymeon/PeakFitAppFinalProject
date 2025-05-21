@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx/17.0.6"
+            fx:controller="com.yourteam.app.peakfitappfinalproject.model.GenerateWorkoutController"
+            prefWidth="360.0" prefHeight="500.0"
+            style="-fx-background-color: linear-gradient(to bottom, #f1f8e9, #dcedc8);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="15.0"
+              AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+            <padding>
+                <Insets top="20" bottom="20" left="20" right="20"/>
+            </padding>
+
+            <children>
+
+                <Label text="Generate Workout"
+                       style="-fx-font-weight: bold;"
+                       textAlignment="CENTER">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Label>
+
+                <ComboBox fx:id="muscleGroupCombo" promptText="Choose Muscle Group" prefWidth="280.0"/>
+
+                <Button fx:id="generateButton"
+                        text="Generate"
+                        onAction="#handleGenerateWorkout"
+                        prefWidth="200.0"
+                        style="-fx-background-color: #388e3c; -fx-text-fill: white;" />
+
+                <TextArea fx:id="workoutArea"
+                          prefWidth="280.0" prefHeight="200.0"
+                          editable="false" wrapText="true" />
+
+                <Button fx:id="backButton"
+                        text="Back"
+                        onAction="#handleBackToMain"
+                        prefWidth="200.0"
+                        style="-fx-background-color: #cfd8dc;" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

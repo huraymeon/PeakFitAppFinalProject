@@ -9,7 +9,7 @@ public class MainApp extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/yourteam/app/peakfitappfinalproject/model/main-dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("PeakFit App");
         stage.setScene(scene);

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" spacing="15.0" style="-fx-background-color: linear-gradient(to bottom, #e0f7fa, #b2ebf2);; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yourteam.app.peakfitappfinalproject.model.MainDashboardController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Label text="PeakFit App" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <right>
+            <Button fx:id="viewHistoryButton" mnemonicParsing="false" onAction="#handleWorkoutHistory" text="Workout History" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <Button fx:id="generateButton" mnemonicParsing="false" onAction="#handleGenerateWorkout" text="Generate Workout" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+         </center>
+         <left>
+            <Button fx:id="logWorkoutButton" mnemonicParsing="false" onAction="#handleLogWorkout" text="Log Workout" BorderPane.alignment="CENTER" />
+         </left>
+         <bottom>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="Exit" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>
