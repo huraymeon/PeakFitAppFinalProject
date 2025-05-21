@@ -8,7 +8,7 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
             xmlns="http://javafx.com/javafx/17.0.6"
             fx:controller="com.yourteam.app.peakfitappfinalproject.model.GenerateWorkoutController"
-            prefWidth="360.0" prefHeight="500.0"
+            prefWidth="360.0" prefHeight="520.0"
             style="-fx-background-color: linear-gradient(to bottom, #f1f8e9, #dcedc8);">
 
     <children>
@@ -28,7 +28,8 @@
                     </font>
                 </Label>
 
-                <ComboBox fx:id="muscleGroupCombo" promptText="Choose Muscle Group" prefWidth="280.0"/>
+                <ComboBox fx:id="goalCombo" promptText="Select Goal" prefWidth="280.0" />
+                <ComboBox fx:id="muscleGroupCombo" promptText="Select Muscle Group" prefWidth="280.0" />
 
                 <Button fx:id="generateButton"
                         text="Generate"
@@ -37,7 +38,7 @@
                         style="-fx-background-color: #388e3c; -fx-text-fill: white;" />
 
                 <TextArea fx:id="workoutArea"
-                          prefWidth="280.0" prefHeight="200.0"
+                          prefWidth="280.0" prefHeight="240.0"
                           editable="false" wrapText="true" />
 
                 <Button fx:id="backButton"
@@ -49,3 +50,4 @@
         </VBox>
     </children>
 </AnchorPane>
+

@@ -11,8 +11,12 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 
 import java.io.IOException;
+import java.util.*;
 
 public class GenerateWorkoutController {
+
+    @FXML
+    private ComboBox<String> goalCombo;
 
     @FXML
     private ComboBox<String> muscleGroupCombo;
@@ -20,30 +24,50 @@ public class GenerateWorkoutController {
     @FXML
     private TextArea workoutArea;
 
+    private final Random random = new Random();
+
+    private final Map<String, List<String>> workouts = Map.of(
+            "chest", List.of("Bench Press", "Push-ups", "Incline Dumbbell Press", "Cable Flyes"),
+            "back", List.of("Deadlifts", "Pull-ups", "Seated Cable Rows", "Lat Pulldown"),
+            "legs", List.of("Squats", "Lunges", "Leg Press", "Leg Curls"),
+            "arms", List.of("Barbell Curls", "Tricep Dips", "Hammer Curls", "Skull Crushers"),
+            "shoulders", List.of("Overhead Press", "Lateral Raises", "Front Raises", "Arnold Press"),
+            "full body", List.of("Burpees", "Kettlebell Swings", "Jump Squats", "Mountain Climbers")
+    );
+
     @FXML
     public void initialize() {
         muscleGroupCombo.getItems().addAll("Chest", "Back", "Legs", "Arms", "Shoulders", "Full Body");
+        goalCombo.getItems().addAll("Fat Loss", "Strength", "Hypertrophy");
     }
 
     @FXML
     private void handleGenerateWorkout(ActionEvent event) {
         String muscle = muscleGroupCombo.getValue();
-        if (muscle == null) {
-            workoutArea.setText("Please select a muscle group.");
+        String goal = goalCombo.getValue();
+
+        if (muscle == null || goal == null) {
+            workoutArea.setText("Please select both a muscle group and a goal.");
             return;
         }
 
-        String result = switch (muscle.toLowerCase()) {
-            case "chest" -> "Bench Press\nPush-ups\nIncline Dumbbell Press";
-            case "back" -> "Deadlifts\nPull-ups\nSeated Cable Rows";
-            case "legs" -> "Squats\nLunges\nLeg Press";
-            case "arms" -> "Barbell Curls\nTricep Dips\nHammer Curls";
-            case "shoulders" -> "Overhead Press\nLateral Raises\nFront Raises";
-            case "full body" -> "Burpees\nKettlebell Swings\nJump Squats";
-            default -> "No workout found.";
-        };
+        List<String> exercises = new ArrayList<>(workouts.get(muscle.toLowerCase()));
+        Collections.shuffle(exercises);
 
-        workoutArea.setText("Workout for " + muscle + ":\n\n" + result);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Workout for ").append(muscle).append(" (Goal: ").append(goal).append(")\n\n");
+
+        for (int i = 0; i < 3 && i < exercises.size(); i++) {
+            String setsReps = switch (goal.toLowerCase()) {
+                case "fat loss" -> "3 sets x 15 reps";
+                case "strength" -> "5 sets x 5 reps";
+                case "hypertrophy" -> "4 sets x 10 reps";
+                default -> "3 sets x 10 reps";
+            };
+            sb.append(exercises.get(i)).append(" - ").append(setsReps).append("\n");
+        }
+
+        workoutArea.setText(sb.toString());
     }
 
     @FXML
