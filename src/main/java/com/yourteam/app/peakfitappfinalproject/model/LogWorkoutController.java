@@ -54,6 +54,7 @@ public class LogWorkoutController {
     @FXML
     private void finishLog(ActionEvent event) throws IOException {
         //Add workout to log
+        WorkoutHistoryController.logWorkout(workout);
 
 
 
